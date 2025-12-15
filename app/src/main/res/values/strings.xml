@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">FaceBook Post</string>
+    <string name="user_name">Ezat Rashad</string>
+    <string name="time">2 hrs · 🌍</string>
+    <string name="post_text">Buckle up, because change is coming to WordPress</string>
+    <string name="post_link">http://unblast.com/color-schemes</string>
+    <string name="likes_count">👍 12</string>
+    <string name="shares_count">1 Share</string>
+    <string name="like">Like</string>
+    <string name="comment">Comment</string>
+    <string name="share">Share</string>
+</resources>
