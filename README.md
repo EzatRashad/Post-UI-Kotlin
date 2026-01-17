@@ -1,12 +1,23 @@
 # Facebook Post UI – Android (Kotlin)
 
-Facebook Post UI for Android applications, built using **Kotlin** and **Material Design** principles.
+A **Facebook Post UI** implementation for Android applications, built using **Kotlin**, **RecyclerView**, and **Material Design** principles.
 
-This project focuses on UI/UX only and can be easily integrated with Facebook Post or any backend service.
+---
 
- Material Design
+## 🚀 Feature
+- 🔁 Built using **RecyclerView**
+- 🧩 Clean & reusable Adapter pattern
+
+
+---
+
+## 🧱 Tech Stack
+- **Language:** Kotlin  
+- **UI:** XML Layouts  
+- **Core Component:** RecyclerView  
+- **Architecture:** Adapter-based UI structure  
+
+---
 
 ## 📸 Preview
-<img width="887" height="705" alt="Image" src="https://github.com/user-attachments/assets/e6b86893-fd95-43fe-9f34-cd03abfbf1c1" />
-
- 
+<img width="300" height="600" alt="Image" src="https://github.com/user-attachments/assets/a4e10265-ed70-448c-8ad1-887490eeecc0" />
