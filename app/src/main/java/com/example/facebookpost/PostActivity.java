@@ -1,27 +1,31 @@
 package com.example.facebookpost;
 
 import android.os.Bundle;
-
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
-
-import com.google.android.material.appbar.AppBarLayout;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import java.util.ArrayList;
+import java.util.List;
 
 public class PostActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
-
         setContentView(R.layout.activity_post);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
+
+        RecyclerView recyclerView = findViewById(R.id.posts_rv);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+
+        List<Post> postList = new ArrayList<>();
+
+        postList.add(new Post("Ahmed Ali", "2 hours ago", "Hello World!"));
+        postList.add(new Post("Mohamed Hassan", "30 mins ago", "Hello World!"));
+        postList.add(new Post("Sara Khaled", "Just now", "Hello World!"));
+        postList.add(new Post("John Doe", "5 mins ago", "Hello World!"));
+
+        PostAdapter adapter = new PostAdapter(postList);
+        recyclerView.setAdapter(adapter);
     }
 }
