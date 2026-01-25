@@ -4,13 +4,20 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
 import java.util.List;
 
 public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder> {
 
     private List<Post> postList;
+    OnPostClickListener onPostClickListener;
+    public void setOnPostClickListener(OnPostClickListener listener) {
+        this.onPostClickListener = listener;
+    }
+
 
     public PostAdapter(List<Post> postList) {
         this.postList = postList;
@@ -29,6 +36,19 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
         holder.userName.setText(post.getUserName());
         holder.time.setText(post.getPostTime());
         holder.content.setText(post.getPostContent());
+        holder.itemView.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        if (onPostClickListener != null) {
+                            onPostClickListener.onPostClick(post,position);
+
+                        }
+
+                    }
+                }
+        );
+
     }
 
     @Override
